@@ -1,4 +1,4 @@
---etta
+--gdahg
 
 getgenv().scriptConfiguration = {
     ["Fruits"] = {
@@ -44,6 +44,8 @@ local Things = workspace.__THINGS
 
 local startingTick = tick()
 local startingDiamonds = Library.Save.Get().Diamonds
+
+HumanoidRootPart.Anchored = true
 
 Things.Orbs.ChildAdded:Connect(function(orb)
     if orb:FindFirstChild("Orb") then
