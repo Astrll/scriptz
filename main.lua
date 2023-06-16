@@ -1,3 +1,5 @@
+--etta
+
 getgenv().scriptConfiguration = {
     ["Fruits"] = {
         ["Minimum Fruits"] = 65,
@@ -200,16 +202,19 @@ function getPVCoins()
 end
 
 if GetOranges() < getgenv().scriptConfiguration["Fruits"]["Minimum Fruits"] then
+    repeat task.wait() until WorldCmds.HasLoaded()
     if WorldCmds.Get() ~= "Pixel" then
         WorldCmds.Load("Pixel")
     end
+    repeat task.wait() until WorldCmds.HasLoaded()
     getsenv(LocalPlayer.PlayerScripts.Scripts.GUIs.Teleport).Teleport("Pixel Vault")
     repeat farmMulti(getPVCoins()) until GetOranges() >= getgenv().scriptConfiguration["Fruits"]["Maximum Fruits"]
     repeat task.wait() until canHop()
 end
 
 
---Diamond Farming
+repeat task.wait() until WorldCmds.HasLoaded()
+
 if WorldCmds.HasLoaded() and WorldCmds.Get() ~= "Diamond Mine" then
     WorldCmds.Load("Diamond Mine")
 end
