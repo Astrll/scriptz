@@ -1,4 +1,4 @@
---gdahg
+--mastr
 
 getgenv().scriptConfiguration = {
     ["Fruits"] = {
@@ -255,10 +255,10 @@ local teleported = false
 while task.wait(1) do
     if canHop() and not teleported == true then
         task.wait(0.2) if not canHop() or teleported == true then return end
-        teleported = true
-        if getgenv().scriptConfiguration["Webhooks"]["Enable Webhook"] and (Library.Save.Get().Diamonds - startingDiamonds) > 0 then
+        if getgenv().scriptConfiguration["Webhooks"]["Enable Webhook"] and (Library.Save.Get().Diamonds - startingDiamonds) > 0 and not teleported then
             sendwebhook()
         end
+        teleported = true
         Serverhop:LowPing(false, nil, 85)
     end
 end
