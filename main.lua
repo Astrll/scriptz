@@ -208,7 +208,11 @@ if WorldCmds.HasLoaded() and WorldCmds.Get() ~= "Diamond Mine" then
 end
 
 repeat task.wait() until WorldCmds.HasLoaded()
-repeat task.wait() until WorldCmds.Get() == "Diamond Mine"
+
+if WorldCmds.Get() == "Spawn" then
+    Serverhop:LowPlayers(false, nil, 8)
+    return
+end
 
 HumanoidRootPart.CFrame = CFrame.new(teleports["Mystic Mine Chest"])
 
@@ -245,6 +249,6 @@ while task.wait(1) do
             sendwebhook()
         end
         teleported = true
-        Serverhop:LowPing(false, nil, 85)
+        Serverhop:LowPlayers(false, nil, 8)
     end
 end
