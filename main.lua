@@ -1,17 +1,3 @@
---mastr
-
-getgenv().scriptConfiguration = {
-    ["Fruits"] = {
-        ["Minimum Fruits"] = 65,
-        ["Maximum Fruits"] = 200
-    },
-    ["Webhooks"] = {
-        ["Enable Webhook"] = true,
-        ["Webhook URL"] = "https://discord.com/api/webhooks/1118210191293431859/7lKZT0ahKjjLxfD-JNwLRNaZ0tjDQ8CL-Os0d3rsgSNZ0VDuVmn8IljkkQjEpfTxleJv"
-    }
-}
-
-
 local Serverhop = loadstring(game:HttpGet("https://raw.githubusercontent.com/socialsuicide/lua-scripts/main/serverhop-library/src.lua"))();
 
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
